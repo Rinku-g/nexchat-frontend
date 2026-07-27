@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+@import "tailwindcss";
+@import "./tailwind-theme.css";
+@import "./utilities.css";
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    min-height: 100vh;
+  }
+
+  img,
+  picture {
+    display: block;
+    max-width: 100%;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+}
+
+:root {
+  --bg: #0d0d1a;
+  --panel: rgba(255, 255, 255, 0.03);
+
+  --border: rgba(255, 255, 255, 0.08);
+  --coverborder: 1.5px solid rgba(255, 255, 255, 0.09);
+
+  --grad: linear-gradient(135deg, #7c3aed, #4f46e5);
+  --grad2: linear-gradient(135deg, #4f46e5, #7c3aed);
+
+  --boxshadow: 0 40px 80px rgba(0, 0, 0, 0.55);
+
+  --white: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.72);
+  --text-soft: rgba(255, 255, 255, 0.6);
+  --disabled: rgba(255, 255, 255, 0.42);
+  /* --background: rgba(255, 255, 255, 0.06); */
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg);
+  color: #fff;
+  overflow: hidden;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}

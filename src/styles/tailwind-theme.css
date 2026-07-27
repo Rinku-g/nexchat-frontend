@@ -1,0 +1,24 @@
+@theme inline {
+  --color-bg: var(--bg);
+  --color-panel: var(--panel);
+  --color-border: var(--border);
+  --color-coverborder: var(--coverborder);
+
+  --grad: var(--grad);
+  --grad2: var(--grad2);
+
+  --radius-card: 18px;
+  --radius-btn: 12px;
+
+  --shadow-card: 0 10px 35px rgba(0, 0, 0, 0.25);
+  --shadow-soft: 0 5px 20px rgba(0, 0, 0, 0.15);
+
+  --font-display: "Inter", sans-serif;
+
+  --boxshadow: var(--boxshadow);
+
+  --color-white: var(--white);
+  --color-text-muted: var(--text-muted);
+  --color-text-soft: var(--text-soft);
+  --color-disabled: var(--disabled);
+}
