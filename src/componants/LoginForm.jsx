@@ -8,10 +8,11 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { isAuthenticated } from "../utils/auth";
 import { socket } from "../config/socket";
+import { useLoader } from "../context/LoaderContext";
 
 const LoginForm = ({ tab, fields, isSignup, setTab }) => {
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
+  const { setLoading, loading } = useLoader();
 
   const signupInitialValues = {
     username: "",
@@ -25,9 +26,8 @@ const LoginForm = ({ tab, fields, isSignup, setTab }) => {
   };
 
   const handleSubmit = async (values) => {
-    setLoading(true);
-
     try {
+      setLoading(true);
       const response = await apiRequest({
         url: isSignup ? "/register" : "/login",
         method: "POST",
