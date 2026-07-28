@@ -3,6 +3,7 @@ import { X } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { toast } from "react-toastify";
 import { apiRequest } from "../apiServices";
+import { useLoader } from "../context/LoaderContext";
 
 export default function NewChatModal({
   openModal,
@@ -13,13 +14,13 @@ export default function NewChatModal({
   const [search, setSearch] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
   const [selectUserId, setSelectUserId] = useState("");
+  const { setLoader } = useLoader();
 
   const wrapperRef = useRef(null);
 
   const createNewChat = async () => {
-    console.log("Dfdsfdfdsdf", selectUserId);
-
     try {
+      setLoader(true);
       const response = await apiRequest({
         url: "/chats",
         method: "POST",
@@ -50,7 +51,7 @@ export default function NewChatModal({
         console.log(response.message);
       }
     } finally {
-      // setLoading(false);
+      setLoader(false);
     }
   };
 
@@ -73,8 +74,6 @@ export default function NewChatModal({
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-
-  console.log("selectUserId----->", selectUserId);
 
   return (
     <AnimatePresence>

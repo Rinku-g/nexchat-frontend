@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { formatTime } from "../utils";
 
 export default function MessageBubble({ message }) {
-  console.log("ssssssssssss", message);
   const { text, createdAt } = message;
   return (
     <motion.div

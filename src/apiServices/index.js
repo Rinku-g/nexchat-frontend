@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://nexchat-backend-production-d51b.up.railway.app/api",
+  baseURL: "https://nexchat-backend-production-04cd.up.railway.app/api",
   timeout: 10000,
   headers: {
     "Content-Type": "application/json",
@@ -11,7 +11,7 @@ const api = axios.create({
 export const apiRequest = async (config) => {
   try {
     const { data, status } = await api(config);
-    console.log("qqqqqqqqqqqq", data);
+
     return data;
   } catch (error) {
     const status = error.response?.status || 500;

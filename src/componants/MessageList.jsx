@@ -7,7 +7,6 @@ export default function MessageList({ getUserChatText }) {
 
       <div className="flex flex-col">
         {getUserChatText?.map((userMessage) => {
-          console.log("dddddddddddddddd", userMessage);
           return (
             <div key={userMessage._id} className="flex justify-end mb-2">
               <MessageBubble message={userMessage} />

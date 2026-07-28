@@ -9,7 +9,6 @@ import { useEffect, useState } from "react";
 export default function ChatArea({ activeList }) {
   const [inputVaue, setInputValue] = useState("");
   const [getUserChatText, setGetuserChatText] = useState(null);
-  console.log("activeList--->", getUserChatText);
 
   const getChatData = async (chatId) => {
     try {
@@ -21,7 +20,6 @@ export default function ChatArea({ activeList }) {
         },
       });
 
-      console.log("dddddddddddddd", res?.data);
       if (res?.status === 200) {
         setGetuserChatText(res?.data);
       }
