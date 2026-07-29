@@ -15,7 +15,6 @@ export default function NewChatModal({
   const [showDropdown, setShowDropdown] = useState(false);
   const [selectUserId, setSelectUserId] = useState("");
   const { setLoading } = useLoader();
-
   const wrapperRef = useRef(null);
 
   const createNewChat = async () => {
