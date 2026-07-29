@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { isAuthenticated } from "../utils/auth";
 import { socket } from "../config/socket";
 import { useLoader } from "../context/LoaderContext";
+import SocialLogin from "./SocialLogin";
 
 const LoginForm = ({ tab, fields, isSignup, setTab }) => {
   const navigate = useNavigate();
@@ -105,6 +106,8 @@ const LoginForm = ({ tab, fields, isSignup, setTab }) => {
             >
               {isSignup ? "Create Account" : "Sign In"}
             </button>
+
+            {!isSignup && <SocialLogin />}
           </Form>
         );
       }}
