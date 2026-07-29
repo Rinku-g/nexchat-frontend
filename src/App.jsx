@@ -5,9 +5,14 @@ import { ToastContainer } from "react-toastify";
 import { SocketProvider } from "./context/SocketContext";
 import { LoaderProvider } from "./context/LoaderContext";
 import Loader from "./componants/Loader";
+import { GoogleOAuthProvider } from "@react-oauth/google";
+
 
 const App = () => {
+  const authClientId = import.meta.env.VITE_AUTH_CLIENT_ID;
+
   return (
+    <GoogleOAuthProvider clientId={authClientId}>
     <LoaderProvider>
       <SocketProvider>
         <BrowserRouter>
@@ -17,6 +22,7 @@ const App = () => {
         </BrowserRouter>
       </SocketProvider>
     </LoaderProvider>
+    </GoogleOAuthProvider>
   );
 };
 

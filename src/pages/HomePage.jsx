@@ -14,10 +14,10 @@ function HomePage() {
     chatId: null,
     userName: null,
   });
-  console.log("Sadsddsadsada---->", activeList);
+
 
   const getProfileData = async () => {
-    // setLoading(true);
+
 
     try {
       const response = await apiRequest({
@@ -42,7 +42,7 @@ function HomePage() {
         console.log(response.message);
       }
     } finally {
-      // setLoading(false);
+
     }
   };
 

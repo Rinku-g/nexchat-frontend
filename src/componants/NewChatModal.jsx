@@ -14,13 +14,13 @@ export default function NewChatModal({
   const [search, setSearch] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
   const [selectUserId, setSelectUserId] = useState("");
-  const { setLoader } = useLoader();
+  const { setLoading } = useLoader();
 
   const wrapperRef = useRef(null);
 
   const createNewChat = async () => {
     try {
-      setLoader(true);
+      setLoading(true);
       const response = await apiRequest({
         url: "/chats",
         method: "POST",
@@ -32,9 +32,14 @@ export default function NewChatModal({
         },
       });
 
+      if(!response){
+        console.log("not res null")
+        return
+      }
+
       if (response?.status === 200) {
         setRefreshchatList(true);
-        toast.success(response.message, {
+        toast.success(response?.message, {
           autoClose: 2000,
         });
         console.log("dsfdsfsdfdsfdsf", response);
@@ -51,7 +56,7 @@ export default function NewChatModal({
         console.log(response.message);
       }
     } finally {
-      setLoader(false);
+      setLoading(false);
     }
   };
 
