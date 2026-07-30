@@ -1,7 +1,10 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_LOCAL_URL,
+  baseURL:
+    import.meta.env?.MODE === "development"
+      ? import.meta.env.VITE_API_LOCAL_URL
+      : import.meta.env.VITE_API_URL,
   timeout: 10000,
   headers: {
     "Content-Type": "application/json",
@@ -49,7 +52,7 @@ export const apiRequest = async (config) => {
 
       default:
         if (error.code === "ECONNABORTED") {
-          message = "Request Timeout";
+          message = "Request Timeout !!";
         } else if (!error.response) {
           message = "Network Error. Please check your internet connection.";
         } else {
