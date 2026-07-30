@@ -107,7 +107,10 @@ const LoginForm = ({ tab, fields, isSignup, setTab }) => {
               {isSignup ? "Create Account" : "Sign In"}
             </button>
 
+<div className="center w-full">
+
             {!isSignup && <SocialLogin />}
+</div>
           </Form>
         );
       }}
