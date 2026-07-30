@@ -106,7 +106,7 @@ export default function Sidebar({
                       }}
                       className="flex items-center rounded-1xl gap-4 p-2 cursor-pointer hover:bg-[#232335] transition-all duration-200 border-b border-[#2A2A3A]"
                     >
-                      {/* Avatar */}
+            
                       <div className="relative">
                         <img
                           src={`https://ui-avatars.com/api/?name=${username}&background=random`}
