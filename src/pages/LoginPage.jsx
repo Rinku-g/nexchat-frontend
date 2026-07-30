@@ -27,7 +27,7 @@ const LoginPage = () => {
   return (
     <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#090910]">
       <BackgroundEffect />
-      <div className="relative z-10 w-107.5 rounded-30 border border-white/10 bg-white/5 p-[42px_40px_34px] shadow-[0_25px_80px_rgba(0,0,0,.45)] backdrop-blur-2xl min-h-150 max-h-150">
+      <div className="relative z-10 w-107.5 rounded-30 border border-white/10 bg-white/5 p-[42px_40px_34px] shadow-[0_25px_80px_rgba(0,0,0,.45)] backdrop-blur-2xl min-h-140 max-h-140">
         <FormHeader tab={tab} content={content} />
         <TabNavigation tab={tab} setTab={setTab} />
         <LoginForm
