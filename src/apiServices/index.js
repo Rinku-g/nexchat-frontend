@@ -52,7 +52,7 @@ export const apiRequest = async (config) => {
 
       default:
         if (error.code === "ECONNABORTED") {
-          message = "Request Timeout";
+          message = "Request Timeout !!";
         } else if (!error.response) {
           message = "Network Error. Please check your internet connection.";
         } else {
