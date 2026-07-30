@@ -90,7 +90,7 @@ export default function Sidebar({
             <ul>
               {chatUserList &&
                 chatUserList?.map((user) => {
-                  console.log("ssssssssssss", user);
+                  
                   const { username, phoneNumber } = user?.user;
 
                   return (

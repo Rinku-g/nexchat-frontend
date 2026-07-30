@@ -1,11 +1,11 @@
 import axios from "axios";
 
 const api = axios.create({
-  // baseURL:
-  //   import.meta.env?.MODE === "development"
-  //     ? import.meta.env.VITE_API_LOCAL_URL
-  //     : import.meta.env.VITE_API_URL,
-  baseURL: "https://nexchat-backend-production-d51b.up.railway.app/",
+  baseURL:
+    import.meta.env?.MODE === "development"
+      ? import.meta.env.VITE_API_LOCAL_URL
+      : import.meta.env.VITE_API_URL,
+  // baseURL: "https://nexchat-backend-production-d51b.up.railway.app/",
   timeout: 10000,
   headers: {
     "Content-Type": "application/json",
