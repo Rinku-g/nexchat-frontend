@@ -3,10 +3,14 @@ import { jwtDecode } from "jwt-decode";
 import { apiRequest } from "../apiServices";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
 
 
 const SocialLogin = () => {
   const navigate = useNavigate();
+  const containerRef = useRef(null);
+  const [width, setWidth] = useState(0);
+
 
   const handleSuccess = async (credentialResponse) => {
     try {
@@ -41,19 +45,33 @@ const SocialLogin = () => {
     console.log("Google Login Failed");
   };
 
+  useEffect(() => {
+    const updateWidth = () => {
+      if (containerRef.current) {
+        setWidth(containerRef.current.offsetWidth);
+      }
+    };
+
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
+
   return (
-    <div className="w-full">
+    <div ref={containerRef} className="w-full">
+    {width > 0 && (
       <GoogleLogin
         onSuccess={handleSuccess}
         onError={handleError}
-        width="0%"
+        width={width}
         text="signin_with"
         shape="rectangular"
         theme="outline"
         size="large"
-        logo_alignment="left"
       />
-    </div>
+    )}
+  </div>
   );
 };
 
