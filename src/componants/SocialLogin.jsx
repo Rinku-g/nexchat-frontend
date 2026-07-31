@@ -46,7 +46,7 @@ const SocialLogin = () => {
       <GoogleLogin
         onSuccess={handleSuccess}
         onError={handleError}
-        width="100%"
+        width="0%"
         text="signin_with"
         shape="rectangular"
         theme="outline"
