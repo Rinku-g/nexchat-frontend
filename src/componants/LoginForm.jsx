@@ -83,6 +83,8 @@ const LoginForm = ({ tab, fields, isSignup, setTab }) => {
         return (
           <Form className="mt-6 space-y-6">
             {fields.map((field, index) => {
+
+              
               return (
                 <div key={index}>
                   <InputField
@@ -94,6 +96,7 @@ const LoginForm = ({ tab, fields, isSignup, setTab }) => {
                     error={errors[field.name]}
                     touched={touched[field.name]}
                     handleChange={handleChange}
+                    // maxLength={field.type}
                   />
                 </div>
               );
